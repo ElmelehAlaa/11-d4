@@ -12,6 +12,7 @@ const SingleArticle = ({ article }: SingleArticleProps) => {
           style={{ width: "250px", height: "250px", objectFit: "contain" }}
           variant="top"
           src={article.image_url}
+          alt="img-url"
         />
         <Card.Body>
           <Card.Title>{article.title}</Card.Title>
@@ -20,9 +21,13 @@ const SingleArticle = ({ article }: SingleArticleProps) => {
           </Card.Text>
           <Button variant="primary">
             <Link className="text-white" to={`/${article.id}`}>
-              check article
+              Read article
             </Link>
           </Button>
+          <p className="py-3">
+            pubblicato il:{"  "}
+            {article.published_at.toString()}
+          </p>
         </Card.Body>
       </Card>
     </Col>
